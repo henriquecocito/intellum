@@ -1,14 +1,14 @@
 package com.henriquecocito.intellum.useCases
 
-import com.henriquecocito.intellum.domain.useCases.GetUserFromText
-import com.henriquecocito.intellum.domain.useCases.GetUserFromTextUseCase
+import com.henriquecocito.intellum.domain.useCases.GetUsersFromText
+import com.henriquecocito.intellum.domain.useCases.GetUsersFromTextUseCase
 import com.henriquecocito.intellum.entities.User
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class GetUserFromTextUseCaseTest {
 
-    private val getUserFromTextUseCase: GetUserFromTextUseCase = GetUserFromText()
+    private val getUserFromTextUseCase: GetUsersFromTextUseCase = GetUsersFromText()
 
     @Test
     fun shouldReturnASetOfUsers_whenTextIsGiven() {

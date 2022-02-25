@@ -2,7 +2,7 @@ package com.henriquecocito.intellum.domain.useCases
 
 import com.henriquecocito.intellum.entities.User
 
-internal class GetUserFromText : GetUserFromTextUseCase {
+internal class GetUsersFromText : GetUsersFromTextUseCase {
 
     private val regex = "@\\[(.+?)\\]\\(([0-9]+?)\\)".toRegex()
 
