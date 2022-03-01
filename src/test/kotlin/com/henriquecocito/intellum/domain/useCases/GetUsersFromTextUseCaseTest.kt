@@ -11,7 +11,7 @@ class GetUsersFromTextUseCaseTest {
     private val getUserFromTextUseCase: GetUsersFromTextUseCase = GetUsersFromText()
 
     @Test
-    fun shouldReturnASetOfUsers_whenTextIsGiven() {
+    fun whenTextIsGiven_shouldReturnASetOfUsers() {
         val expectedUsers = setOf(
             User("567", "Joe Bloggs"),
             User("123", "Henrique Cocito"),
@@ -24,7 +24,7 @@ class GetUsersFromTextUseCaseTest {
     }
 
     @Test
-    fun shouldReturnAnEmptySet_whenTextWithNoUserTagIsGiven() {
+    fun whenTextWithNoUserTagIsGiven_shouldReturnAnEmptySet() {
         val expectedUsers = setOf<User>()
 
         val text = "Thanks to Joe Bloggs and Henrique Cocito"
@@ -34,7 +34,7 @@ class GetUsersFromTextUseCaseTest {
     }
 
     @Test
-    fun shouldReturnAnEmptySet_whenTextWithPartOfUserTagIsGiven() {
+    fun whenTextWithPartOfUserTagIsGiven_shouldReturnAnEmptySet() {
         val expectedUsers = setOf<User>()
 
         val text = "Thanks to [Joe Bloggs](123) and @[Henrique Cocito]"
@@ -44,7 +44,7 @@ class GetUsersFromTextUseCaseTest {
     }
 
     @Test
-    fun shouldReturnAnEmptySet_whenTextWithEmptyUserTagIsGiven() {
+    fun whenTextWithEmptyUserTagIsGiven_shouldReturnAnEmptySet() {
         val expectedUsers = setOf<User>()
 
         val text = "Thanks to Joe @[]() and @[]()"

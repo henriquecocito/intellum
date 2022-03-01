@@ -8,7 +8,7 @@ class GetExampleLinkBusinessRuleTest {
     private val getExampleLink: GetExampleLink = GetExampleLink()
 
     @Test
-    fun givenUserId_shouldReturnExampleLink() {
+    fun whenUserIdIsGiven_shouldReturnExampleLink() {
         val expectedResult = "https://example.com/users/123"
         val result = getExampleLink.execute("123")
 
@@ -16,7 +16,7 @@ class GetExampleLinkBusinessRuleTest {
     }
 
     @Test
-    fun givenEmptyUserId_shouldReturnExampleLinkWithoutUserId() {
+    fun whenEmptyUserIdIsGiven_shouldReturnExampleLinkWithoutUserId() {
         val expectedResult = "https://example.com/users/"
         val result = getExampleLink.execute("")
 
