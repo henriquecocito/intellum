@@ -1,12 +1,12 @@
-package com.henriquecocito.intellum.useCases
+package com.henriquecocito.intellum.domain.useCases
 
-import com.henriquecocito.intellum.domain.useCases.GetUsersFromText
-import com.henriquecocito.intellum.domain.useCases.GetUsersFromTextUseCase
-import com.henriquecocito.intellum.entities.User
+import com.henriquecocito.intellum.domain.useCases.getUsersFromText.GetUsersFromText
+import com.henriquecocito.intellum.domain.useCases.getUsersFromText.GetUsersFromTextUseCase
+import com.henriquecocito.intellum.entities.models.User
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class GetUserFromTextUseCaseTest {
+class GetUsersFromTextUseCaseTest {
 
     private val getUserFromTextUseCase: GetUsersFromTextUseCase = GetUsersFromText()
 
@@ -20,7 +20,7 @@ class GetUserFromTextUseCaseTest {
         val text = "Thanks to @[Joe Bloggs](567) and @[Henrique Cocito](123)"
         val response = getUserFromTextUseCase.execute(text)
 
-        assertEquals(response, expectedUsers)
+        assertEquals(expectedUsers, response)
     }
 
     @Test
@@ -30,7 +30,7 @@ class GetUserFromTextUseCaseTest {
         val text = "Thanks to Joe Bloggs and Henrique Cocito"
         val response = getUserFromTextUseCase.execute(text)
 
-        assertEquals(response, expectedUsers)
+        assertEquals(expectedUsers, response)
     }
 
     @Test
@@ -40,7 +40,7 @@ class GetUserFromTextUseCaseTest {
         val text = "Thanks to [Joe Bloggs](123) and @[Henrique Cocito]"
         val response = getUserFromTextUseCase.execute(text)
 
-        assertEquals(response, expectedUsers)
+        assertEquals(expectedUsers, response)
     }
 
     @Test
@@ -50,6 +50,6 @@ class GetUserFromTextUseCaseTest {
         val text = "Thanks to Joe @[]() and @[]()"
         val response = getUserFromTextUseCase.execute(text)
 
-        assertEquals(response, expectedUsers)
+        assertEquals(expectedUsers, response)
     }
 }

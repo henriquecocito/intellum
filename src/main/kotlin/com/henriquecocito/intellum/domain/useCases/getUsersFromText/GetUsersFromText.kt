@@ -1,6 +1,6 @@
-package com.henriquecocito.intellum.domain.useCases
+package com.henriquecocito.intellum.domain.useCases.getUsersFromText
 
-import com.henriquecocito.intellum.entities.User
+import com.henriquecocito.intellum.entities.models.User
 
 internal class GetUsersFromText : GetUsersFromTextUseCase {
 

@@ -1,4 +1,4 @@
-package com.henriquecocito.intellum.entities
+package com.henriquecocito.intellum.entities.models
 
 data class User(
     val id: String,
